@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=0,maximum-scale=10">
+
+<title>budon</title>
+
+<link  rel="stylesheet"  href="./css/default.css">
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="./js/select_box.js"></script>
+
+<script src="./js/check_box.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+
+
+<!-- Load c3.css -->
+<link href="/path/to/c3.css" rel="stylesheet">
+
+<!-- Load d3.js and c3.js -->
+<script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
+<script src="/path/to/c3.min.js"></script>
+
+
+<script src="./js/main.js"></script>
+</head>
+
+
+
+<body>
+
+
+<header class="header" id="header">
+	<div class="inbox">
+		<div class="hd__logo__wr">
+			<a href="./index.html"><img src="./images/logo.svg" title="budon logo" alt="budon logo"></a>
+		</div>
+		<ul class="hd__menu__wr">
+			<li class=" hd__menu__list hd__menu__list01">
+				<a href="./index.html"><span class="menu__icon"><img src="./images/icon_header_off01.svg" alt=""></span><p class="">Real-Time View</p></a>
+			</li>
+			<li class=" hd__menu__list hd__menu__list02">
+				<a href="./trendview.html"><span class="menu__icon"><img src="./images/icon_header_off02.svg" alt=""></span><p class="">Trend View</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list03">
+				<a href="./alarm.html"><span class="menu__icon"><img src="./images/icon_header_off03.svg" alt=""></span><p class="">Alarm History</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list04">
+				<a href="./download.html"><span class="menu__icon"><img src="./images/icon_header_off04.svg" alt=""></span><p class="">Download</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list05">
+				<a href="./data.html"><span class="menu__icon"><img src="./images/icon_header_off05.svg" alt=""></span><p>데이터 수집현황</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list06">
+				<a href="./dashboard.html"><span class="menu__icon"><img src="./images/icon_header_off06.svg" alt=""></span><p>시스템 대시보드</p></a>
+			</li>
+			<li class="active hd__menu__list hd__menu__list07">
+				<a href="./management.html"><span class="menu__icon"><img src="./images/icon_header_on07.svg" alt=""></span><p>사용자 관리</p></a>
+			</li>
+		</ul>
+
+		<section class="container__top__box" id="container__top__box">
+			<div class="top__profile__box">
+				<div class="top__profile__icon"><img src="./images/profile_default.svg" alt="profile"></div>
+				<div class="top__admin__info">
+					<p class="top__admin__name">PLAN-A</p>
+					<p class="top__admin__id">planaagency</p>
+				</div>
+				<div class="top__more__view">
+					<img src="./images/icon_profile_arrow.svg" alt="moreview">
+				</div> 
+				<ul class="top__profile__menu">
+					<li class="top__profile__edit">
+						<a href="#">
+							<span class="top__edit__icon">
+								<img src="./images/icon_profilemenu_edit_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_edit_on.svg" class="icon on">
+							</span>
+							Edit
+						</a>
+					</li>
+					<li class="top__profile__logout">
+						<a href="./login.html">
+							<span class="top__logout__icon">
+								<img src="./images/icon_profilemenu_logout_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_logout_on.svg" class="icon on">
+							</span>
+								Log Out
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</header>
+
+
+
+<div id="wrapper">
+	<div id="container">
+		<section class="container__contents__wr" id="">
+			<div class="container__contents__box ">
+				<!-- 상단 -->
+				<div class="container__top__wr">
+					<div class="container__title__wr">
+						<p class="container__title">사용자 관리</p>
+					</div>
+						<div class="select__text__wr select__text__left__wr"><!-- 위치가 오른쪽 끝이 아닌 왼쪽 끝인 경우 -->
+							<p class="select__text">Show</p>
+							<div class="search__select">
+								<span class="selected__option"><!-- 선택된 옵션 값이 출력되는 부분 --></span>
+									<!-- 옵션 영역 -->
+								<ul class="search__select__ul ">
+									<li class="search__select__list">
+										10
+									</li>
+									<li class="search__select__list">
+										25
+									</li>
+									<li class="search__select__list">
+										50
+									</li>
+									<li class="search__select__list">
+										100
+									</li>
+								</ul>
+							</div>
+							<p class="select__text">entries per page (total <span class="total__text">35</span> entries)</p>
+						</div>
+					<div class="container__top__sch__wr">
+							<form>
+								<input type="text" class="container__top__sch__input" value="" placeholder="Search">
+								<button class="container__top__sch__btn"><img src="./images/icon_search_btn.svg"></button>
+							</form>
+					</div>
+				</div>
+
+				
+				<div class="container__list__wr container__list__different__wr"><!-- .container__list__different__wr 컨텐츠  width가 동일하지 않을때 -->
+					<ul class="clearfix container__list__hd">
+						<li class="container__hd__list container__list__hd__num">
+							번호
+							<span class="sort__wr">
+								<span class="sort__ascending"><img src="./images/icon_ascending_arrow_off.svg" alt="" class=""></span>
+								<span class="sort__descending"><img src="./images/icon_ascending_arrow_off.svg" alt=""></span>
+							</span>
+						</li>
+						<li class="container__hd__list container__hd__list__name">
+							성명
+							<span class="sort__wr">
+								<span class="sort__ascending"><img src="./images/icon_ascending_arrow_off.svg" alt="" class=""></span>
+								<span class="sort__descending"><img src="./images/icon_ascending_arrow_off.svg" alt=""></span>
+							</span>
+						</li>
+						<li class="container__hd__list container__hd__list__id">
+							ID
+							<span class="sort__wr">
+								<span class="sort__ascending"><img src="./images/icon_ascending_arrow_off.svg" alt="" class=""></span>
+								<span class="sort__descending"><img src="./images/icon_ascending_arrow_off.svg" alt=""></span>
+							</span>
+						</li>
+						<li class="container__hd__list container__hd__list__contact">
+							연락처
+							<span class="sort__wr">
+								<span class="sort__ascending"><img src="./images/icon_ascending_arrow_off.svg" alt="" class=""></span>
+								<span class="sort__descending"><img src="./images/icon_ascending_arrow_off.svg" alt=""></span>
+							</span>
+						</li>
+						<li class="container__hd__list container__hd__list__email">
+							이메일
+							<span class="sort__wr">
+								<span class="sort__ascending"><img src="./images/icon_ascending_arrow_off.svg" alt="" class=""></span>
+								<span class="sort__descending"><img src="./images/icon_ascending_arrow_off.svg" alt=""></span>
+							</span>
+						</li>
+						<li class="container__hd__list container__hd__list__rank">
+							등급
+							<span class="sort__wr">
+								<span class="sort__ascending"><img src="./images/icon_ascending_arrow_off.svg" alt="" class=""></span>
+								<span class="sort__descending"><img src="./images/icon_ascending_arrow_off.svg" alt=""></span>
+							</span>
+						</li>
+						<li class="container__hd__list container__hd__list__approval">
+							승인일/가입승인
+							<span class="sort__wr">
+								<span class="sort__ascending"><img src="./images/icon_ascending_arrow_off.svg" alt="" class=""></span>
+								<span class="sort__descending"><img src="./images/icon_ascending_arrow_off.svg" alt=""></span>
+							</span>
+						</li>
+						<li class="container__hd__list container__hd__list__recent">
+							최근모바일접속
+							<span class="sort__wr">
+								<span class="sort__ascending"><img src="./images/icon_ascending_arrow_off.svg" alt="" class=""></span>
+								<span class="sort__descending"><img src="./images/icon_ascending_arrow_off.svg" alt=""></span>
+							</span>
+						</li>
+						<li class="container__hd__list container__hd__list__modify"></li>
+					</ul>
+
+					<ul class="container__list__cont__wr management__list__cont__wr"><!-- .management__list__cont__wr = 페이징 버튼이 없어 높이가 다름 -->
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">01</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">hi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">ducbin005</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">ducbin@mnc.ai</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-03-31 10:39:21</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">2022-12-26 23:53:09</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">02</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">김민히</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">poipoi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">010-2697-8521</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">poipoi@gmail.com</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-10-12 10:34:59</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">03</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">hi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">ducbin005</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">ducbin@mnc.ai</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-03-31 10:39:21</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">2022-12-26 23:53:09</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">04</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">김민히</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">poipoi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">010-2697-8521</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">poipoi@gmail.com</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-10-12 10:34:59</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">05</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">hi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">ducbin005</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">ducbin@mnc.ai</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-03-31 10:39:21</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">2022-12-26 23:53:09</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">06</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">김민히</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">poipoi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">010-2697-8521</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">poipoi@gmail.com</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-10-12 10:34:59</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">07</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">hi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">ducbin005</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">ducbin@mnc.ai</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-03-31 10:39:21</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">2022-12-26 23:53:09</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">08</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">김민히</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">poipoi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">010-2697-8521</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">poipoi@gmail.com</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-10-12 10:34:59</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">09</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">hi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">ducbin005</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">ducbin@mnc.ai</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-03-31 10:39:21</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">2022-12-26 23:53:09</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont container__list__cont__num">
+									<p class="">10</p>
+								</li>
+								<li class="container__list__cont container__list__cont__name">
+									<p class="">김민히</p>
+								</li>
+								<li class="container__list__cont container__list__cont__id">
+									<p class="">poipoi</p>
+								</li>
+								<li class="container__list__cont container__list__cont__contact">
+									<p class="">010-2697-8521</p>
+								</li>
+								<li class="container__list__cont container__list__cont__email">
+									<p class="">poipoi@gmail.com</p>
+								</li>
+								<li class="container__list__cont container__list__cont__rank">
+									<p class="">User</p>
+								</li>
+								<li class="container__list__cont container__list__cont__approval">
+									<p class="">2022-10-12 10:34:59</p>
+								</li>
+								<li class="container__list__cont container__list__cont__recent">
+									<p class="">None</p>
+								</li>
+								<li class="container__list__cont container__list__cont__modify">
+									<span class="container__list__modify__btn"><img src="./images/icon_modify_btn_off.svg" class="icon"></span>
+									<span class="container__list__del__btn"><img src="./images/icon_del_btn_off.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<div class="clearfix container__list__paging">
+					<div class="pg__page pg__first"><img src="./images/icon_paging_first.svg"></div>
+					<div class="pg__page pg__prev"><img src="./images/icon_paging_prev.svg"></div>
+					<div class="pg__page pg__current">1</div>
+					<div class="pg__page">2</div>
+					<div class="pg__page">3</div>
+					<div class="pg__page">4</div>
+					<div class="pg__page">5</div>
+					<div class="pg__page pg__next"><img src="./images/icon_paging_next.svg"></div>
+					<div class="pg__page pg__last"><img src="./images/icon_paging_last.svg"></div>
+				</div>
+			</div>
+		</section>
+
+
+		<div class="info__popup__wr popup__wr">
+			<div class="popup__bg"></div>
+			<div class="info__popup__box popup__box">
+				<p class="info__popup__title popup__title">회원정보 수정</p>
+				<div class="info__popup__cont popup__cont">
+					<ul class="">
+						<li class="info__popup__cont__list">
+							<p class="info__popup__cont__text">성명</p>
+							<input type="text">
+						</li>
+						<li class="info__popup__cont__list">
+							<p class="info__popup__cont__text">ID</p>
+							<input type="text" class="input__readonly" readonly>
+						</li>
+						<li class="info__popup__cont__list">
+							<p class="info__popup__cont__text">이메일</p>
+							<input type="email">
+						</li>
+						<li class="info__popup__cont__list">
+							<p class="info__popup__cont__text">비밀번호</p>
+							<input type="password">
+						</li>
+						<li class="info__popup__cont__list">
+							<p class="info__popup__cont__text">연락처</p>
+							<input type="text">
+						</li>
+						<li class="info__popup__cont__list">
+							<p class="info__popup__cont__text">계정유효기간</p>
+							<input type="text">
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="info__popup__btn__wr popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+					<a href="javascript:void(0);" class="popup__save__btn">SAVE SHANGES</a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="my__info__popup__wr popup__wr">
+			<div class="popup__bg"></div>
+			<div class="my__info__popup__box popup__box">
+				<p class="my__info__popup__title popup__title">내 정보 수정</p>
+				<div class="my__info__popup__cont popup__cont">
+					<ul class="">
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 ID</p>
+							<input type="text" class="input__readonly" readonly>
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호 확인</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 이름</p>
+							<input type="text">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">E-Mail</p>
+							<input type="email">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">연락처</p>
+							<input type="text">
+						</li>
+					</ul>
+				</div>
+				<div class="my__info__popup__btn__wr popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+					<a href="javascript:void(0);" class="popup__save__btn">SAVE SHANGES</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</body>
+</html>

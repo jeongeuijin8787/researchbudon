@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=0,maximum-scale=10">
+
+<title>budon</title>
+
+<link  rel="stylesheet"  href="./css/default.css">
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+
+
+
+<!-- Load c3.css -->
+<link href="/path/to/c3.css" rel="stylesheet">
+
+<!-- Load d3.js and c3.js -->
+<script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
+<script src="/path/to/c3.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<!-- datepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link  rel="stylesheet"  href="./css/datepicker.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script src="./js/select_box.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/check_box.js"></script>
+<script src="./js/date.js"></script>
+<script src="./js/graph.js"></script>
+
+
+
+</head>
+
+<body>
+
+<header class="header" id="header">
+	<div class="inbox">
+		<div class="hd__logo__wr">
+			<a href="./index.html"><img src="./images/logo.svg" title="budon logo" alt="budon logo"></a>
+		</div>
+		<ul class="hd__menu__wr">
+			<li class=" hd__menu__list hd__menu__list01">
+				<a href="./index.html"><span class="menu__icon"><img src="./images/icon_header_off01.svg" alt=""></span><p class="">Real-Time View</p></a>
+			</li>
+			<li class="active hd__menu__list hd__menu__list02">
+				<a href="./trendview.html"><span class="menu__icon"><img src="./images/icon_header_on02.svg" alt=""></span><p class="">Trend View</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list03">
+				<a href="./alarm.html"><span class="menu__icon"><img src="./images/icon_header_off03.svg" alt=""></span><p class="">Alarm History</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list04">
+				<a href="./download.html"><span class="menu__icon"><img src="./images/icon_header_off04.svg" alt=""></span><p class="">Download</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list05">
+				<a href="./data.html"><span class="menu__icon"><img src="./images/icon_header_off05.svg" alt=""></span><p>데이터 수집현황</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list06">
+				<a href="./dashboard.html"><span class="menu__icon"><img src="./images/icon_header_off06.svg" alt=""></span><p>시스템 대시보드</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list07">
+				<a href="./management.html"><span class="menu__icon"><img src="./images/icon_header_off07.svg" alt=""></span><p>사용자 관리</p></a>
+			</li>
+		</ul>
+
+		<section class="container__top__box" id="container__top__box">
+			<div class="top__profile__box">
+				<div class="top__profile__icon"><img src="./images/profile_default.svg" alt="profile"></div>
+				<div class="top__admin__info">
+					<p class="top__admin__name">PLAN-A</p>
+					<p class="top__admin__id">planaagency</p>
+				</div>
+				<div class="top__more__view">
+					<img src="./images/icon_profile_arrow.svg" alt="moreview">
+				</div> 
+				<ul class="top__profile__menu">
+					<li class="top__profile__edit">
+						<a href="#">
+							<span class="top__edit__icon">
+								<img src="./images/icon_profilemenu_edit_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_edit_on.svg" class="icon on">
+							</span>
+							Edit
+						</a>
+					</li>
+					<li class="top__profile__logout">
+						<a href="./login.html">
+							<span class="top__logout__icon">
+								<img src="./images/icon_profilemenu_logout_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_logout_on.svg" class="icon on">
+							</span>
+								Log Out
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</header>
+
+
+
+<div id="wrapper">
+	<div id="container">
+		<section class="container__contents__wr" id="">
+			<div class="container__contents__box ">
+				<!-- 상단 -->
+				<div class="container__top__wr">
+					<div class="container__title__wr">
+						<p class="container__title">Trend View</p>
+					</div>
+				</div>
+					<div class="tab__contents__wr">
+						<div class="tab__contents__box" id="tab__contents__box01">
+							<div class="clearfix">
+								<div class="contents__share__wr">
+									<div class="tab__left__wr">
+
+										<div class="filter__tab__wr">
+											<ul class="filter__tab__ul">
+												<li class="filter__tab__list activate"><a href="./trendview.html" class="filter__tab__btn">Numeric</a></li>
+												<li class="filter__tab__list"><a href="./trendview_wave.html" class="filter__tab__btn">Waveform</a></li>
+											</ul>
+										</div>
+										<div class="search__wr">
+											<form id="form1" name="form1">
+												<div class="container__filter__wr " id="">
+													<ul class="clearfix container__ul">
+														<li class="container__filter container__filter01">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check03" checked>
+															<label for="container__filter__check03"><span></span>HR</label>
+														</li>
+														<li class="container__filter container__filter02">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check04" checked>
+															<label for="container__filter__check04"><span></span>RR</label>
+														</li>
+														<li class="container__filter container__filter03">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check05" checked>
+															<label for="container__filter__check05"><span></span>Sp02</label>
+														</li>
+														<li class="container__filter container__filter04">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check06" checked>
+															<label for="container__filter__check06"><span></span>NIBP-S</label>
+														</li>
+														<li class="container__filter container__filter05">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check07" checked>
+															<label for="container__filter__check07"><span></span>NIBP-D</label>
+														</li>
+														<li class="container__filter container__filter06">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check08" checked>
+															<label for="container__filter__check08"><span></span>TEMP</label>
+														</li>
+														<li class="container__filter container__filter07">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check09" checked>
+															<label for="container__filter__check09"><span></span>Pulse</label>
+														</li>
+														<li class="container__filter container__filter08">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check10" checked>
+															<label for="container__filter__check10"><span></span>VPC</label>
+														</li>
+														<li class="container__filter container__filter09">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check11" checked>
+															<label for="container__filter__check11"><span></span>CPP</label>
+														</li>
+													</ul>
+												</div>
+
+
+												<div class="search__num__wr">
+													<p class="search__title">Patient No.</p>
+													<input type="text" name="search__patient">
+												</div>
+												<div class="search__start__data__wr">
+														
+													<input id="get__input" type="text" value="">
+													<p class="search__title">Start Time</p>
+													<div class="search__start__data__calender">
+														<input type="text" class="start__datepicker" name="start__datepicker" placeholder="연도 - 월 - 일" autocomplete="off">
+														<script>
+																var nowdate = new Date();
+																nowdate.setHours(nowdate.getHours() - 3);
+																$('input[name="start__datepicker"]').daterangepicker({
+																	singleDatePicker: true,
+																	timePicker: true,
+																	timePicker24Hour: true,
+																	timePickerSeconds: true,
+																	timePickerIncrement:1,
+																	locale: {
+																	   format: 'YYYY-MM-DD HH:mm:ss',
+																		"applyLabel": "확인",                    // 확인 버튼 텍스트
+																		"cancelLabel": "취소",                   // 취소 버튼 텍스트
+																		"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+																		"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+																		
+																	},
+																	startDate:nowdate,
+																});	
+														</script>
+													</div>
+												</div>
+												
+												<div class="search__end__data__wr">
+													<p class="search__title">End Time (Start Time +3 hours)</p>
+													<div class="search__end__data__calender">
+														<input type="text" class="end__datepicker" name="end__datepicker" placeholder="연도 - 월 - 일" autocomplete="off">
+														<script>
+															var enddate = new Date();
+															$('input[name="end__datepicker"]').daterangepicker({
+																singleDatePicker: true,
+																timePicker: true,
+																timePicker24Hour: true,
+																timePickerSeconds: true,
+																timePickerIncrement:1,
+																locale: {
+																	   format: 'YYYY-MM-DD HH:mm:ss',
+																		"applyLabel": "확인",                    // 확인 버튼 텍스트
+																		"cancelLabel": "취소",                   // 취소 버튼 텍스트
+																		"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+																		"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+																	},
+																startDate:enddate,
+															});
+														</script>
+													</div>
+												</div>
+												<div class="search__btn__wr">
+													<button type="button" class="search__results__btn" onclick="form_Check();">Show Results</button>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div class="right__wr long__right__wr">
+										<div class="container__all__graph__wr">
+											<div class="container__all__graph__data">
+												<a href="#" alt="prev" class="all__graph__prev"><img src="./images/icon_all_graph_prev.svg" alt=""></a>
+												<div class="all__graph__text">2022-12-12 09:23:00  ~  2022-12-12 12:23:00</div>
+												<a href="#" alt="next" class="all__graph__next"><img src="./images/icon_all_graph_next.svg" alt=""></a>
+											</div>
+
+											
+											<div class="data__graph__wr">
+												<div class="data__graph__arrow__box">
+													<div class="all__graph__prev"><a href="#" alt="prev"><img src="./images/icon_all_graph_prev.svg" alt=""></a></div>
+													<div class="all__graph__next"><a href="#" alt="next"><img src="./images/icon_all_graph_next.svg" alt=""></a></div>
+												</div>
+												<canvas id="graph__trend__numeric"></canvas>
+												<script>
+												
+												  const ctx7 = document.getElementById('graph__trend__numeric');
+
+												  new Chart(ctx7, {
+													type: 'line',
+													data: {
+													  labels: ['2022-09', '2022-10', '2022-11', '2022-12', '2023-01', '2023-02'],
+													  datasets: [{
+														label: 'Monthly',
+														data: [2, 0, 2, 4, 2, 4],
+														backgroundColor: [
+															'#1FC9E4'
+														],
+														borderColor: [
+															'#1FC9E4'
+														],
+														borderWidth: 1
+													  }]
+													},
+													options: {
+													  scales: {
+														y: {
+														  beginAtZero: true
+														}
+													  }
+													}
+												  });
+												</script>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</section>
+
+
+		<div class="my__info__popup__wr popup__wr">
+			<div class="popup__bg"></div>
+			<div class="my__info__popup__box popup__box">
+				<p class="my__info__popup__title popup__title">내 정보 수정</p>
+				<div class="my__info__popup__cont popup__cont">
+					<ul class="">
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 ID</p>
+							<input type="text" class="input__readonly" readonly>
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호 확인</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 이름</p>
+							<input type="text">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">E-Mail</p>
+							<input type="email">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">연락처</p>
+							<input type="text">
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="my__info__popup__btn__wr popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+					<a href="javascript:void(0);" class="popup__save__btn">SAVE SHANGES</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+<script>
+function form_Check(){
+	if(form1.search__patient.value == ''){
+		alert("환자번호를 입력해주십시오.");
+		form1.search__patient.focus();
+		return;
+	}
+	if(form1.start__datepicker.value == ''){
+		alert("시작날짜를 입력해주십시오.");
+		form1.start__datepicker.focus();
+		return;
+	}
+	if(form1.start__timepicker.value == ''){
+		alert("시작시간을 입력해주십시오.");
+		form1.start__timepicker.focus();
+		return;
+	}
+}
+</script>
+
+
+
+</body>
+</html>

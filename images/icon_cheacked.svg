@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="10" viewBox="0 0 10.121 10">
+  <g id="icon" transform="translate(-368.939 -270)">
+    <g id="check" transform="translate(378 273) rotate(90)">
+      <line id="check-2" data-name="check" x2="5" y2="5" transform="translate(0 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+      <line id="check-3" data-name="check" y1="3" x2="3" transform="translate(2 5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+    <rect id="영역" width="10" height="10" transform="translate(369 270)" fill="#fff" opacity="0"/>
+  </g>
+</svg>

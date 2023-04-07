@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="icon" transform="translate(-1782 -186)">
+    <rect id="영역" width="20" height="20" transform="translate(1782 186)" fill="#ddd" opacity="0"/>
+    <path id="clock" d="M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20Zm4.589-6.584a.7.7,0,0,0-.143-.978L10.7,9.646V3.6a.7.7,0,1,0-1.4,0V10a.7.7,0,0,0,.282.561l4.028,3a.7.7,0,0,0,.978-.143Z" transform="translate(1782 186.003)" fill="#ddd" fill-rule="evenodd"/>
+  </g>
+</svg>

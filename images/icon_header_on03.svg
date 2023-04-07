@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20.001" viewBox="0 0 20 20.001">
+  <g id="icon" transform="translate(-51 -436)">
+    <g id="bell" transform="translate(42.111 429.516)">
+      <path id="bell-2" data-name="bell" d="M29.96,7.492a12.763,12.763,0,0,1,2.7.28V6.79c-.108-2.688-5.284-2.694-5.4,0v.982A12.762,12.762,0,0,1,29.96,7.492Z" transform="translate(-11.071 1.713)" fill="#fff"/>
+      <path id="box" d="M28.207,25.455c-.96-.876-2.1-2.2-2.088-3.5V18.81c-.361-7.517-12.826-7.519-13.188,0v3.144c.017,1.305-1.128,2.625-2.088,3.5a.913.913,0,0,0-.225,1.1,1.2,1.2,0,0,0,1.088.614H27.343a1.208,1.208,0,0,0,1.08-.617.917.917,0,0,0-.216-1.1Z" transform="translate(-0.632 -4.688)" fill="#fff"/>
+      <path id="bell-3" data-name="bell" d="M24.45,54a3.974,3.974,0,0,0,3.6,3,3.974,3.974,0,0,0,3.6-3Z" transform="translate(-9.161 -30.515)" fill="#fff"/>
+    </g>
+    <rect id="영역" width="20" height="20" transform="translate(51 436)" fill="#fff" opacity="0"/>
+  </g>
+</svg>

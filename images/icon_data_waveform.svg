@@ -1,0 +1,11 @@
+<svg id="icon_data_waveform" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <circle id="box" cx="21" cy="21" r="21" fill="rgba(250,170,71,0.1)"/>
+  <g id="icon" transform="translate(11 11)">
+    <g id="graph">
+      <rect id="사각형_10048" data-name="사각형 10048" width="5.714" height="8.571" rx="1" transform="translate(0 11.429)" fill="#faaa47"/>
+      <rect id="사각형_10049" data-name="사각형 10049" width="5.714" height="14.286" rx="1" transform="translate(14.286 5.714)" fill="#faaa47"/>
+      <rect id="사각형_10050" data-name="사각형 10050" width="5.714" height="20" rx="1" transform="translate(7.143)" fill="#faaa47"/>
+    </g>
+    <rect id="영역" width="20" height="20" fill="#faaa47" opacity="0"/>
+  </g>
+</svg>

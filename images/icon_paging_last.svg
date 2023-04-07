@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.054" height="14" viewBox="0 0 14.054 14">
+  <g id="next_btn" transform="translate(0.054)">
+    <g id="arrow" transform="translate(0 0.999)">
+      <path id="arrow-2" data-name="arrow" d="M426.436-8459l4,5-4,5" transform="translate(-425.436 8460.001)" fill="none" stroke="#596175" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="arrow-3" data-name="arrow" d="M426.436-8459l4,5-4,5" transform="translate(-417.436 8460.001)" fill="none" stroke="#596175" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+    <rect id="영역" width="14" height="14" fill="#fff" opacity="0"/>
+  </g>
+</svg>

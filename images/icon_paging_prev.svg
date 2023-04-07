@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+  <g id="prev_btn" transform="translate(-425.177 8461.5)" opacity="0.6">
+    <path id="arrow" d="M430.436-8459l-4,5,4,5" transform="translate(3.741 -0.499)" fill="none" stroke="#596175" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <rect id="영역" width="14" height="14" transform="translate(425.177 -8461.5)" fill="#fff" opacity="0"/>
+  </g>
+</svg>

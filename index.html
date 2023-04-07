@@ -1,0 +1,1534 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=0,maximum-scale=10">
+
+<title>budon</title>
+
+<link  rel="stylesheet"  href="./css/default.css">
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="./js/select_box.js"></script>
+
+<script src="./js/check_box.js"></script>
+<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"> -->
+<!-- <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<!-- Load c3.css -->
+<link href="/path/to/c3.css" rel="stylesheet">
+
+<!-- Load d3.js and c3.js -->
+<script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
+<script src="/path/to/c3.min.js"></script>
+
+
+<script src="./js/main.js"></script>
+<script src="./js/graph.js"></script>
+</head>
+
+
+
+<body>
+
+
+<header class="header" id="header">
+	<div class="inbox">
+		<div class="hd__logo__wr">
+			<a href="./index.html"><img src="./images/logo.svg" title="budon logo" alt="budon logo"></a>
+		</div>
+		<ul class="hd__menu__wr">
+			<li class="active hd__menu__list hd__menu__list01">
+				<a href="./index.html"><span class="menu__icon"><img src="./images/icon_header_on01.svg" alt="iconadminsetting"></span><p class="">Real-Time View</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list02">
+				<a href="./trendview.html"><span class="menu__icon"><img src="./images/icon_header_off02.svg" alt="iconmatching"></span><p class="">Trend View</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list03">
+				<a href="./alarm.html"><span class="menu__icon"><img src="./images/icon_header_off03.svg" alt="iconmatching"></span><p class="">Alarm History</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list04">
+				<a href="./download.html"><span class="menu__icon"><img src="./images/icon_header_off04.svg" alt="iconmatching"></span><p class="">Download</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list05">
+				<a href="./data.html"><span class="menu__icon"><img src="./images/icon_header_off05.svg" alt="iconmatching"></span><p>데이터 수집현황</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list06">
+				<a href="./dashboard.html"><span class="menu__icon"><img src="./images/icon_header_off06.svg" alt="iconmatching"></span><p>시스템 대시보드</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list07">
+				<a href="./management.html"><span class="menu__icon"><img src="./images/icon_header_off07.svg" alt="iconmatching"></span><p>사용자 관리</p></a>
+			</li>
+		</ul>
+
+		
+		<section class="container__top__box" id="container__top__box">
+			<div class="top__profile__box">
+				<div class="top__profile__icon"><img src="./images/profile_default.svg" alt="profile"></div>
+				<div class="top__admin__info">
+					<p class="top__admin__name">PLAN-A</p>
+					<p class="top__admin__id">planaagency</p>
+				</div>
+				<div class="top__more__view">
+					<img src="./images/icon_profile_arrow.svg" alt="moreview">
+				</div> 
+				<ul class="top__profile__menu">
+					<li class="top__profile__edit">
+						<a href="#">
+							<span class="top__edit__icon">
+								<img src="./images/icon_profilemenu_edit_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_edit_on.svg" class="icon on">
+							</span>
+							Edit
+						</a>
+					</li>
+					<li class="top__profile__logout">
+						<a href="./login.html">
+							<span class="top__logout__icon">
+								<img src="./images/icon_profilemenu_logout_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_logout_on.svg" class="icon on">
+							</span>
+								Log Out
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</header>
+
+
+<div id="wrapper">
+	<div id="container">
+
+		<section class="container__contents__wr" id="">
+			<div class="container__contents__box ">
+				<!-- 상단 -->
+				<div class="container__top__wr">
+					<div class="container__title__wr">
+						<p class="container__title">Numeric Real-Time</p>
+						<div class="container__help__wr">
+							<img src="./images/icon__realtime__help.svg">
+							<div class="container__help__content__wr">
+								<p class="container__help__content__title">Parameter information</p>
+								<p class="container__help__content__text">HR – Heart Rate <br>
+									RR – Respiratory Rate <br>
+									SpO2 - Saturation of Percutaneous Oxygen <br>
+									NIBP-S –Non-invasive Blood Pressure-Systolic <br>
+									NIBP-D – Non-invasive Blood Pressure-Diastolic <br>
+									TEMP – Body Temperature <br>
+									Pulse – Pulse Rate <br>
+									VPC - Premature Ventricular Contractions Per Minute <br>
+									CPP – Cerebral Perfusion Pressure <br>
+									RF-RISK – Possible Risk of Respiratory Failure within 72 Hours of Admission
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container__list__wr realtime__list__wr">
+				
+					<div class="container__filter__wr">
+						<div class="container__refresh__wr">
+							<p class="container__refresh__title"><img src="./images/icon_watch.svg" alt="watch icon" title="watch icon">02:36 후 새로고침</p>
+						</div>
+					</div>
+
+					<ul class="clearfix container__list__hd">
+						<li class="container__hd__list"></li>
+						<li class="container__hd__list">HR</li>
+						<li class="container__hd__list">RR</li>
+						<li class="container__hd__list">Sp02</li>
+						<li class="container__hd__list">NIBP-S</li>
+						<li class="container__hd__list">NIBP-D</li>
+						<li class="container__hd__list">TEMP</li>
+						<li class="container__hd__list">Pulse</li>
+						<li class="container__hd__list">VPC</li>
+						<li class="container__hd__list">CPP</li>
+						<li class="container__hd__list">CVP</li>
+						<li class="container__hd__list">RF-RISK</li>
+						<li class="container__hd__list alarm">
+							<img src="./images/icon_alarm_off2.svg" class="icon">
+							<img src="./images/icon_location00.svg" class="">
+						</li>
+					</ul>
+
+					<ul class="container__list__cont__wr">
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__eicu">EICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50 on">
+									<span class="bell__icon__wr"><img src="./images/icon_bell.svg"></span>
+									<p class="">86</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50 ">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__607aff on">
+									<p class="">99</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">35.7</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">88</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b on"><!-- container__list__cont00 - 선택 시 백그라운드 컬러가 혼자 다른 RF-RISK에 의한 class -->
+									<p class="">10</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">								
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__nicu">NICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__607aff on">
+									<p class="">17</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">100</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b">
+									<p class="">15</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__eicu">EICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<span class="bell__icon__wr"><img src="./images/icon_bell.svg"></span>
+									<p class="">86</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">99</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">35.7</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">88</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b"><!-- container__list__cont00 - 선택 시 백그라운드 컬러가 혼자 다른 RF-RISK에 의한 class -->
+									<p class="">10</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">								
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__nicu">NICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">17</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">100</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b">
+									<p class="">15</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__eicu">EICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<span class="bell__icon__wr"><img src="./images/icon_bell.svg"></span>
+									<p class="">86</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">99</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">35.7</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">88</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b"><!-- container__list__cont00 - 선택 시 백그라운드 컬러가 혼자 다른 RF-RISK에 의한 class -->
+									<p class="">10</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">								
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__nicu">NICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">17</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">100</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b">
+									<p class="">15</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__eicu">EICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<span class="bell__icon__wr"><img src="./images/icon_bell.svg"></span>
+									<p class="">86</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">99</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">35.7</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">88</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b"><!-- container__list__cont00 - 선택 시 백그라운드 컬러가 혼자 다른 RF-RISK에 의한 class -->
+									<p class="">10</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">								
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__nicu">NICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">17</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">100</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b">
+									<p class="">15</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__eicu">EICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<span class="bell__icon__wr"><img src="./images/icon_bell.svg"></span>
+									<p class="">86</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">99</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">35.7</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">88</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b"><!-- container__list__cont00 - 선택 시 백그라운드 컬러가 혼자 다른 RF-RISK에 의한 class -->
+									<p class="">10</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">								
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__nicu">NICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">17</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">100</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b">
+									<p class="">15</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__eicu">EICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<span class="bell__icon__wr"><img src="./images/icon_bell.svg"></span>
+									<p class="">86</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">99</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">35.7</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">88</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b"><!-- container__list__cont00 - 선택 시 백그라운드 컬러가 혼자 다른 RF-RISK에 의한 class -->
+									<p class="">10</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">								
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__nicu">NICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">17</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">100</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b">
+									<p class="">15</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__eicu">EICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<span class="bell__icon__wr"><img src="./images/icon_bell.svg"></span>
+									<p class="">86</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">99</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">35.7</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">88</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b"><!-- container__list__cont00 - 선택 시 백그라운드 컬러가 혼자 다른 RF-RISK에 의한 class -->
+									<p class="">10</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+						<li class="container__list__cont__box">
+							<ul class="claerfix container__list__cont__ul">								
+								<li class="container__list__cont__favorites">
+									<div class="favorites__btn__wr">
+										<span class="favorites__btn">
+											<img src="./images/icon_star_off.svg" alt="" class="off">
+											<img src="./images/icon_star_on.svg" alt="" class="on">
+										</span>
+									</div>
+									<span class="container__cont__category__nicu">NICU</span>
+									<p class="container__cont__category__text">BED01</p>
+									<p class="container__cont__category__title">000001</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">17</p>
+								</li>
+								<li class="container__list__cont ftc__607aff">
+									<p class="">100</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__f1511b">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">78</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">0</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont ftc__4caf50">
+									<p class="">-</p>
+								</li>
+								<li class="container__list__cont container__list__cont00 ftc__f1511b">
+									<p class="">15</p>
+								</li>
+								<li class="container__list__cont__alarm">
+									<span class="container__list__alarm__btn"><img src="./images/icon_alarm_off.svg" class="icon"></span>
+									<span class="container__list__location__btn"><img src="./images/icon_location.svg" class="icon"></span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</section>
+
+
+		<div class="personal__popup__wr popup__wr">
+			<div class="popup__bg"></div>
+			<div class="personal__popup__box popup__box">
+				<p class="personal__popup__title popup__title">개인 알람설정</p>
+				<div class="personal__popup__cont popup__cont">
+					<ul class="popup__conthd personal__popup__conthd">
+						<li class="pop__type__title">Type</li>
+						<li class="pop__input__box">High Limit</li>
+						<li class="pop__input__box">Row Limit</li>
+						<li class="personal__popup__slide__btn popup__slide__btn">
+						  <input type="checkbox" value="none" id="all__check02" name="all__check02" />
+						  <label for="all__check02"><span></span></label>
+						</li>
+					</ul>
+					<div class="personal__popup__contlist__wr popup__contlist__wr">
+						<ul class="personal__popup__contlist__box popup__contlist__box">
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">HR</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn1" name="slidebtn1" class="all__check02"/>
+								  <label for="slidebtn1"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">RR</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn2" name="slidebtn2" class="all__check02" />
+								  <label for="slidebtn2"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">Sp02</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn3" name="slidebtn3" class="all__check02" />
+								  <label for="slidebtn3"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">NIBP-S</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn4" name="slidebtn4" class="all__check02" />
+								  <label for="slidebtn4"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">NIBP-D</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn5" name="slidebtn5" class="all__check02" />
+								  <label for="slidebtn5"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">Pulse</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn6" name="slidebtn6" class="all__check02" />
+								  <label for="slidebtn6"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">VPC</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn7" name="slidebtn7" class="all__check02" />
+								  <label for="slidebtn7"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">CPP</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn8" name="slidebtn8" class="all__check02" />
+								  <label for="slidebtn8"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">CVP</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn9" name="slidebtn9" class="all__check02" />
+								  <label for="slidebtn9"><span></span></label>
+								</div>
+							</li>
+							<li class="personal__popup__contlist popup__contlist">
+								<div class="pop__type__title">RF-RISK</div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="pop__input__box"><input type="text"></div>
+								<div class="personal__popup__slide__btn popup__slide__btn">
+								  <input type="checkbox" value="none" id="slidebtn10" name="slidebtn10" class="all__check02" />
+								  <label for="slidebtn10"><span></span></label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="personal__popup__btn__wr popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+					<a href="javascript:void(0);" class="popup__save__btn">SAVE CHANGES</a>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="popup__wr all__popup__wr"><!-- all__popup__wr - 팝업의 사이즈나 레이아웃이 달라서 필요한 class -->
+			<div class="popup__bg"></div>
+			<div class="popup__box clearfix">
+				
+				<ul class="popup__tab__btn__wr">
+					<li class="popup__tab__btn__list"><a href="#" data-tab="tab__contents__box03" class="popup__title active">표시신호선택</a></li>
+					<li class="popup__tab__btn__list"><a href="#" data-tab="tab__contents__box01" class="popup__title ">표시병동선택</a></li>
+					<li class="popup__tab__btn__list"><a href="#" data-tab="tab__contents__box02" class="popup__title">전체 알람설정</a></li>
+				</ul>
+				<div class="active tab__contents__box" id="tab__contents__box03">
+					<div class="popup__cont">
+						<ul class="popup__conthd displaysignal__box">
+							<li class="displaysignal__tab"><input type="radio" value="Numeric" id="ds_numeric" name="Display__signal" checked /><label for="ds_numeric">Numeric</label></li>
+							<li class="displaysignal__tab"><input type="radio" value="Wave" id="ds_wave" name="Display__signal" /><label for="ds_wave">Wave</label></li>
+						</ul>
+						<script>
+						$(function(){
+							$('input[name=Display__signal]').change(function(){
+								if($(this).val() == "Numeric"){
+									$('.displaysignal__listbox').hide();
+									$('.displaysignal__listbox.numeric').show();
+								}else{
+									$('.displaysignal__listbox').hide();
+									$('.displaysignal__listbox.wave').show();
+								}
+							});
+						});
+						</script>
+						<div class="popup__contlist__wr displaysignal__listbox numeric">
+							<ul class="popup__contlist__box">
+								<li class="popup__contlist">
+										<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+										<div class="pop__type__title">Heart rate (HR)</div>
+										<div class="popup__slide__btn">
+										  <input type="checkbox" value="none" id="displaysignal__hr" name="displaysignal__hr" />
+										  <label for="displaysignal__hr"><span></span></label>
+										</div>
+								</li>
+								<li class="popup__contlist">
+										<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+										<div class="pop__type__title">Respiratory rate (RR)</div>
+										<div class="popup__slide__btn">
+										  <input type="checkbox" value="none" id="displaysignal__rr" name="displaysignal__rr" />
+										  <label for="displaysignal__rr"><span></span></label>
+										</div>
+								</li>
+								<li class="popup__contlist">
+										<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+										<div class="pop__type__title">Saturation of percutaneous oxygen (Sp02)</div>
+										<div class="popup__slide__btn">
+										  <input type="checkbox" value="none" id="displaysignal__sp02" name="displaysignal__sp02" />
+										  <label for="displaysignal__sp02"><span></span></label>
+										</div>
+								</li>
+								<li class="popup__contlist">
+										<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+										<div class="pop__type__title">Non invasive blood pressure-systolic (NIBP-S)</div>
+										<div class="popup__slide__btn">
+										  <input type="checkbox" value="none" id="displaysignal__nibp-s" name="displaysignal__nibp-s" />
+										  <label for="displaysignal__nibp-s"><span></span></label>
+										</div>
+								</li>
+								<li class="popup__contlist">
+										<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+										<div class="pop__type__title">Non invasive blood pressure-diastoloc (NIBP-D)</div>
+										<div class="popup__slide__btn">
+										  <input type="checkbox" value="none" id="displaysignal__nibp-d" name="displaysignal__nibp-d" />
+										  <label for="displaysignal__nibp-d"><span></span></label>
+										</div>
+								</li>
+								<li class="popup__contlist">
+										<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+										<div class="pop__type__title">Body temperature (TEMP)</div>
+										<div class="popup__slide__btn">
+										  <input type="checkbox" value="none" id="displaysignal__temp" name="displaysignal__temp" />
+										  <label for="displaysignal__temp"><span></span></label>
+										</div>
+								</li>
+								<li class="popup__contlist">
+										<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+										<div class="pop__type__title">Pulse rate (PULSE)</div>
+										<div class="popup__slide__btn">
+										  <input type="checkbox" value="none" id="displaysignal__pulse" name="displaysignal__pulse" />
+										  <label for="displaysignal__pulse"><span></span></label>
+										</div>
+								</li>
+								<li class="popup__contlist">
+										<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+										<div class="pop__type__title">Premature ventricular contractions (VPC)</div>
+										<div class="popup__slide__btn">
+										  <input type="checkbox" value="none" id="displaysignal__vpc" name="displaysignal__vpc" />
+										  <label for="displaysignal__vpc"><span></span></label>
+										</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+									<div class="pop__type__title">Cerebral perfusion pressure (CPP)</div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="displaysignal__cpp" name="displaysignal__cpp" />
+									  <label for="displaysignal__cpp"><span></span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="popup__contlist__wr displaysignal__listbox wave">
+							<ul class="popup__contlist__box">
+								<li class="popup__contlist">
+									<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+									<div class="pop__type__title">ECG lead ll (ECGII)</div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="displaysignal__ecgii" name="displaysignal__ecgii" />
+									  <label for="displaysignal__ecgii"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+									<div class="pop__type__title">Photoplethy smogram (Pleth)</div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="displaysignal__pleth" name="displaysignal__pleth" />
+									  <label for="displaysignal__pleth"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+									<div class="pop__type__title">Arterial blood pressure (ART)</div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="displaysignal__art" name="displaysignal__art" />
+									  <label for="displaysignal__art"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+									<div class="pop__type__title">Central venous pressure (CVP)</div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="displaysignal__cvp" name="displaysignal__cvp" />
+									  <label for="displaysignal__cvp"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__order__btn"><span class="container__list__location__btn"><img src="./images/icon_location02.svg" class="icon"></span></div>
+									<div class="pop__type__title">Repiratory impedance (RESP)</div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="displaysignal__resp" name="displaysignal__resp" />
+									  <label for="displaysignal__resp"><span></span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class=" tab__contents__box" id="tab__contents__box01">
+					<div class="popup__cont">
+						<ul class="popup__conthd">
+							<li>병동</li>
+						</ul>
+						<div class="popup__contlist__wr">
+							<ul class="popup__contlist__box">
+								<li class="popup__contlist">
+									<div>EICU</div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn30" name="all__slidebtn30" />
+									  <label for="all__slidebtn30"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div>NICU</div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn31" name="all__slidebtn31" />
+									  <label for="all__slidebtn31"><span></span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="tab__contents__box" id="tab__contents__box02">
+					<div class="popup__cont">
+						<ul class="popup__conthd">
+							<li class="pop__type__title">Type</li>
+							<li class="pop__input__box">High Limit</li>
+							<li class="pop__input__box">Row Limit</li>
+							<li class="popup__slide__btn">
+							  <input type="checkbox" value="none" id="all__slidebtn3" name="all__check" />
+							  <label for="all__slidebtn3"><span></span></label>
+							</li>
+						</ul>
+						<div class="popup__contlist__wr">
+							<ul class="popup__contlist__box">
+								<li class="popup__contlist">
+									<div class="pop__type__title">HR</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn4" name="all__slidebtn4" class="all__check01" />
+									  <label for="all__slidebtn4"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">RR</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn5" name="all__slidebtn5" class="all__check01" />
+									  <label for="all__slidebtn5"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">Sp02</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn6" name="all__slidebtn6" class="all__check01" />
+									  <label for="all__slidebtn6"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">NIBP-S</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn7" name="all__slidebtn7" class="all__check01" />
+									  <label for="all__slidebtn7"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">NIBP-S</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn8" name="all__slidebtn8" class="all__check01" />
+									  <label for="all__slidebtn8"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">NIBP-D</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn9" name="all__slidebtn9" class="all__check01" />
+									  <label for="all__slidebtn9"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">Pulse</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn10" name="all__slidebtn10" class="all__check01" />
+									  <label for="all__slidebtn10"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">VPC</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn11" name="all__slidebtn11" class="all__check01" />
+									  <label for="all__slidebtn11"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">CPP</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn12" name="all__slidebtn12" class="all__check01" />
+									  <label for="all__slidebtn12"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">CVP</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn13" name="all__slidebtn13" class="all__check01" />
+									  <label for="all__slidebtn13"><span></span></label>
+									</div>
+								</li>
+								<li class="popup__contlist">
+									<div class="pop__type__title">RF-RISK</div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class="pop__input__box"><input type="text"></div>
+									<div class=" popup__slide__btn">
+									  <input type="checkbox" value="none" id="all__slidebtn14" name="all__slidebtn14" class="all__check01" />
+									  <label for="all__slidebtn14"><span></span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+					<a href="javascript:void(0);" class="popup__save__btn">SAVE CHANGES</a>
+				</div>
+			</div>
+		</div>
+
+		<style>
+
+			#popup__graph01,
+			#popup__graph02,
+			#popup__graph03,
+			#popup__graph04 {max-height:160px; background-color:unset;padding:10px;}
+		</style>
+
+		<div class="popup__wr line__graph__popup__wr main__popup__wr"><!-- graph__popup__wr - 팝업의 사이즈나 레이아웃이 달라서 필요한 class -->
+			<div class="popup__bg"></div>
+			<div class="popup__box line__graph__popup__box clearfix">
+				<p class="popup__title">Realtime Waveform</p>
+				
+				<div class="popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+				</div>
+				<div class="popup__cont">
+					<p class="line__graph__text">Patient ID <strong>000001</strong></p>
+					<ul class="popup__contlist__box">
+						<li class="line__graph__list line__graph__list01">
+							<div class="line__graph__wr" id="">
+								<p class="graph__title ftc__00fc00">EGGII</p>
+								<canvas id="popup__graph01"></canvas>
+								<script>
+								  const ctx1 = document.getElementById('popup__graph01');
+
+								  new Chart(ctx1, {
+									type: 'line',
+									data: {
+									  labels: ['2022-09', '2022-10', '2022-11', '2022-12', '2023-01', '2023-02'],
+									  datasets: [{
+										label: 'EGGII',
+										data: [2, 0, 2, 3, 2, 3],
+										backgroundColor: [
+											'#00FC00'
+										],
+										borderColor: [
+											'#00FC00'
+										],
+										borderWidth: 1
+									  }]
+									},
+									options: {
+										legend: {
+											display: false
+										},
+									  scales: {
+										y: {
+										  beginAtZero: true
+										},
+
+									  }
+									}
+								  });
+								 
+								</script>
+							</div>
+						</li>
+						<li class="line__graph__list line__graph__list02">
+							<div class="line__graph__wr" id="">
+								<p class="graph__title ftc__ffffff">Pleth</p>
+								<canvas id="popup__graph02"></canvas>
+								<script>
+								  const ctx2 = document.getElementById('popup__graph02');
+
+								  new Chart(ctx2, {
+									type: 'line',
+									data: {
+									  labels: ['2022-09', '2022-10', '2022-11', '2022-12', '2023-01', '2023-02'],
+									  datasets: [{
+										label: 'Pleth',
+										data: [2, 0, 2, 3, 2, 3],
+										backgroundColor: [
+											'#ffffff'
+										],
+										borderColor: [
+											'#ffffff'
+										],
+										borderWidth: 1
+									  }]
+									},
+									options: {
+									  scales: {
+										y: {
+										  beginAtZero: true
+										}
+									  }
+									}
+								  });
+								</script>
+							</div>
+						</li>
+						<li class="line__graph__list line__graph__list03">
+							<div class="line__graph__wr" id="">
+								<p class="graph__title ftc__fd0000">ART</p>
+								<canvas id="popup__graph03"></canvas>
+								<script>
+								  const ctx3 = document.getElementById('popup__graph03');
+
+								  new Chart(ctx3, {
+									type: 'line',
+									data: {
+									  labels: ['2022-09', '2022-10', '2022-11', '2022-12', '2023-01', '2023-02'],
+									  datasets: [{
+										label: 'ART',
+										data: [2, 0, 2, 3, 2, 3],
+										backgroundColor: [
+											'#FD0000'
+										],
+										borderColor: [
+											'#FD0000'
+										],
+										borderWidth: 1
+									  }]
+									},
+									options: {
+									  scales: {
+										y: {
+										  beginAtZero: true
+										}
+									  }
+									}
+								  });
+								</script>
+							</div>
+						</li>
+						<li class="line__graph__list line__graph__list04">
+							<div class="line__graph__wr" id="">
+								<p class="graph__title ftc__1fc9e4">CVP</p>
+								<canvas id="popup__graph04"></canvas>
+								<script>
+								  const ctx4 = document.getElementById('popup__graph04');
+
+								  new Chart(ctx4, {
+									type: 'line',
+									data: {
+									  labels: ['2022-09', '2022-10', '2022-11', '2022-12', '2023-01', '2023-02'],
+									  datasets: [{
+										label: 'CVP',
+										data: [2, 0, 2, 3, 2, 3],
+										backgroundColor: [
+											'#1FC9E4'
+										],
+										borderColor: [
+											'#1FC9E4'
+										],
+										borderWidth: 1
+									  }]
+									},
+									options: {
+									  scales: {
+										y: {
+										  beginAtZero: true
+										}
+									  }
+									}
+								  });
+								</script>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		
+		
+
+		<div class="my__info__popup__wr popup__wr">
+			<div class="popup__bg"></div>
+			<div class="my__info__popup__box popup__box">
+				<p class="my__info__popup__title popup__title">내 정보 수정</p>
+				<div class="my__info__popup__cont popup__cont">
+					<ul class="">
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 ID</p>
+							<input type="text" class="input__readonly" readonly>
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호 확인</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 이름</p>
+							<input type="text">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">E-Mail</p>
+							<input type="email">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">연락처</p>
+							<input type="text">
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="my__info__popup__btn__wr popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+					<a href="javascript:void(0);" class="popup__save__btn">SAVE CHANGES</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+</body>
+</html>

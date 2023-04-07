@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=0,maximum-scale=10">
+
+<title>budon</title>
+
+<link  rel="stylesheet"  href="./css/default.css">
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="./js/select_box.js"></script>
+
+<script src="./js/check_box.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+
+<!-- 그래프 -->
+<!-- Load c3.css -->
+<link href="/path/to/c3.css" rel="stylesheet">
+<!-- Load d3.js and c3.js -->
+<script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
+<script src="/path/to/c3.min.js"></script>
+
+
+<!-- datepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link  rel="stylesheet"  href="./css/datepicker.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script src="./js/main.js"></script>
+</head>
+
+
+
+<body>
+
+
+<header class="header" id="header">
+	<div class="inbox">
+		<div class="hd__logo__wr">
+			<a href="./index.html"><img src="./images/logo.svg" title="budon logo" alt="budon logo"></a>
+		</div>
+		<ul class="hd__menu__wr">
+			<li class=" hd__menu__list hd__menu__list01">
+				<a href="./index.html"><span class="menu__icon"><img src="./images/icon_header_off01.svg" alt=""></span><p class="">Real-Time View</p></a>
+			</li>
+			<li class=" hd__menu__list hd__menu__list02">
+				<a href="./trendview.html"><span class="menu__icon"><img src="./images/icon_header_off02.svg" alt=""></span><p class="">Trend View</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list03">
+				<a href="./alarm.html"><span class="menu__icon"><img src="./images/icon_header_off03.svg" alt=""></span><p class="">Alarm History</p></a>
+			</li>
+			<li class="active hd__menu__list hd__menu__list04">
+				<a href="./download.html"><span class="menu__icon"><img src="./images/icon_header_on04.svg" alt=""></span><p class="">Download</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list05">
+				<a href="./data.html"><span class="menu__icon"><img src="./images/icon_header_off05.svg" alt=""></span><p>데이터 수집현황</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list06">
+				<a href="./dashboard.html"><span class="menu__icon"><img src="./images/icon_header_off06.svg" alt=""></span><p>시스템 대시보드</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list07">
+				<a href="./management.html"><span class="menu__icon"><img src="./images/icon_header_off07.svg" alt=""></span><p>사용자 관리</p></a>
+			</li>
+		</ul>
+
+		<section class="container__top__box" id="container__top__box">
+			<div class="top__profile__box">
+				<div class="top__profile__icon"><img src="./images/profile_default.svg" alt="profile"></div>
+				<div class="top__admin__info">
+					<p class="top__admin__name">PLAN-A</p>
+					<p class="top__admin__id">planaagency</p>
+				</div>
+				<div class="top__more__view">
+					<img src="./images/icon_profile_arrow.svg" alt="moreview">
+				</div> 
+				<ul class="top__profile__menu">
+					<li class="top__profile__edit">
+						<a href="#">
+							<span class="top__edit__icon">
+								<img src="./images/icon_profilemenu_edit_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_edit_on.svg" class="icon on">
+							</span>
+							Edit
+						</a>
+					</li>
+					<li class="top__profile__logout">
+						<a href="./login.html">
+							<span class="top__logout__icon">
+								<img src="./images/icon_profilemenu_logout_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_logout_on.svg" class="icon on">
+							</span>
+								Log Out
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</header>
+
+
+
+<div id="wrapper">
+	<div id="container">
+		<section class="container__contents__wr" id="">
+			<div class="container__contents__box ">
+				<!-- 상단 -->
+				<div class="container__top__wr">
+					<div class="container__title__wr">
+						<p class="container__title">Download</p>
+					</div>
+					
+					<div class="container__filter__share__wr container__filter__share__right__wr " id="">
+						<div class="select__text__wr">
+							<p class="select__text">Show</p>
+							<div class="search__select">
+								<span class="selected__option"><!-- 선택된 옵션 값이 출력되는 부분 --></span>
+									<!-- 옵션 영역 -->
+								<ul class="search__select__ul ">
+									<li class="search__select__list">
+										10
+									</li>
+									<li class="search__select__list">
+										25
+									</li>
+									<li class="search__select__list">
+										50
+									</li>
+									<li class="search__select__list">
+										100
+									</li>
+								</ul>
+							</div>
+							<p class="select__text">entries per page (total <span class="total__text">35</span> entries)</p>
+						</div>
+					</div>
+				</div>
+				
+					<div class="tab__contents__wr">
+						<div class=" tab__contents__box" id="tab__contents__box02">
+							<div class="clearfix">
+								<div class="contents__share__wr">
+									<div class="tab__left__wr">
+
+										<div class="filter__tab__wr">
+											<ul class="filter__tab__ul">
+												<li class="filter__tab__list "><a href="./download.html" class="filter__tab__btn">Numeric</a></li>
+												<li class="filter__tab__list activate"><a href="./download_wave.html" class="filter__tab__btn">Waveform</a></li>
+											</ul>
+										</div>
+										<div class="search__wr">
+											<form id="form5" name="form5">
+												<div class="container__filter__wr container__filter__share__wr " id="">
+													
+													<ul class="clearfix container__ul">
+														<li class="container__filter container__filter01">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check35" checked>
+															<label for="container__filter__check35"><span></span>ECG II</label>
+														</li>
+														<li class="container__filter container__filter02">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check36" checked>
+															<label for="container__filter__check36"><span></span>Pleth</label>
+														</li>
+														<li class="container__filter container__filter03">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check37" checked>
+															<label for="container__filter__check37"><span></span>ART</label>
+														</li>
+														<li class="container__filter container__filter04">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check38" checked>
+															<label for="container__filter__check38"><span></span>CVP</label>
+														</li>
+														<li class="container__filter container__filter05">
+															<input type="checkbox" class="container__filter__chk" name="container__filter__chk" id="container__filter__check39" checked>
+															<label for="container__filter__check39"><span></span>RESP</label>
+														</li>
+													</ul>
+												</div>
+												<div class="search__num__wr search__num__upload__wr">
+													<p class="search__title">Patient No.</p>
+													<div class="search__num__upload__box">
+														<input type="text" name="search__patient">
+														<label for="file">
+														  <div class="file__upload__btn"><img src="./images/icon_upload.svg" alt="file upload"></div>
+														</label>
+														<input type="file" name="file" id="file">
+													</div>
+												</div>
+												<div class="clearfix select__share__wr">
+													<div class="search__unit__select__wr">
+														<p class="search__title">UNIT</p>
+														<div class="search__select" data-role="selectbox2">
+															<span date-value="optvalue2" class="selected__option"></span>
+
+															<input type="text" name="selected__option__view" class="selected__option__view ">
+
+														  <!-- 옵션 영역 -->
+															<ul class="search__select__ul ">
+																<li class="search__select__list">3CCU</li>
+																<li class="search__select__list">4CCU</li>
+																<li class="search__select__list">CCU</li>
+																<li class="search__select__list">EICU</li>
+																<li class="search__select__list">MICU</li>
+																<li class="search__select__list">NICU</li>
+																<li class="search__select__list">OR</li>
+																<li class="search__select__list">SICU</li>
+																<li class="search__select__list">SU</li>
+																<li class="search__select__list">TICU</li>
+																<li class="search__select__list">VOTEM</li>
+															</ul>
+														</div>
+													</div>
+													<div class="search__bed__select__wr">
+														<p class="search__title">BED</p>
+														<div class="search__select" data-role="selectbox3">
+															<span date-value="optvalue3" class="selected__option"><!-- 선택된 옵션 값이 출력되는 부분 --></span>
+															<input type="text" name="selected__option__view2" class="selected__option__view ">
+														  <!-- 옵션 영역 -->
+															<ul class="search__select__ul ">
+																<li class="search__select__list">BED01</li>
+																<li class="search__select__list">BED02</li>
+																<li class="search__select__list">BED03</li>
+																<li class="search__select__list">BED04</li>
+																<li class="search__select__list">BED05</li>
+																<li class="search__select__list">BED06</li>
+																<li class="search__select__list">BED07</li>
+																<li class="search__select__list">BED08</li>
+																<li class="search__select__list">BED09</li>
+																<li class="search__select__list">BED10</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="search__start__data__wr">
+													<p class="search__title">Start Time</p>
+													<div class="search__start__data__calender">
+														<input type="text" class="start__datepicker" name="start__datepicker" placeholder="연도 - 월 - 일" autocomplete="off">
+														<script>
+																var nowdate = new Date();
+																$('input[name="start__datepicker"]').daterangepicker({
+																	singleDatePicker: true,
+																	timePicker: true,
+																	timePicker24Hour: true,
+																	timePickerSeconds: true,
+																	timePickerIncrement:1,
+																	locale: {
+																	   format: 'YYYY-MM-DD HH:mm:ss',
+																		"applyLabel": "확인",                    // 확인 버튼 텍스트
+																		"cancelLabel": "취소",                   // 취소 버튼 텍스트
+																		"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+																		"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+																		
+																	},
+																	startDate:nowdate,
+																});	
+														</script>
+													</div>
+													
+												</div>
+												<div class="search__end__data__wr">
+													<p class="search__title">End Time</p>
+													<div class="search__end__data__calender">
+														<input type="text" class="end__datepicker" name="end__datepicker" placeholder="연도 - 월 - 일" autocomplete="off">
+														<script>
+															var enddate = new Date();
+															$('input[name="end__datepicker"]').daterangepicker({
+																singleDatePicker: true,
+																timePicker: true,
+																timePicker24Hour: true,
+																timePickerSeconds: true,
+																timePickerIncrement:1,
+																locale: {
+																	   format: 'YYYY-MM-DD HH:mm:ss',
+																		"applyLabel": "확인",                    // 확인 버튼 텍스트
+																		"cancelLabel": "취소",                   // 취소 버튼 텍스트
+																		"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+																		"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+																	},
+																startDate:enddate,
+															});
+														</script>
+													</div>
+													
+												</div>
+												<div class="search__btn__wr search__num__download__wr">
+													<button type="button" class="search__results__btn" onclick="form_Check();">Show Results</button>
+													<a href="#" class="download__btn"><img src="./images/icon_download.svg" alt=""></a>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div class="right__wr right__wr00"><!-- .left__wr00 위 아래 여백이 있는 경우 사용 -->
+										<div class="container__list__wr container__list__wr05"><!-- .container__list__wr05 컨텐츠  갯수가 5개인 list -->
+											<ul class="clearfix container__list__hd">
+												<li class="container__hd__list">Patient ID</li>
+												<li class="container__hd__list container__hd__list__time">Start Time</li>
+												<li class="container__hd__list container__hd__list__time">End Time</li>
+												<li class="container__hd__list ">Param</li>
+												<li class="container__hd__list container__hd__list__data">Data</li>
+											</ul>
+
+											<ul class="container__list__cont__wr">
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn ">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+												<li class="container__list__cont__box view__more__popup__btn">
+													<ul class="claerfix container__list__cont__ul">
+														<li class="container__list__cont">
+															<p class="">477454166f34c4b6fa94</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont ">
+															<p class="">2022-10-12 15:03:45.000</p>
+														</li>
+														<li class="container__list__cont container__list__time">
+															<p class="">Undefined-16368</p>
+														</li>
+														<li class="container__list__cont container__list__data">
+															<p class="">611,604,596,589,588,111,222,444,131...</p>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</section>
+
+
+		<div class="popup__wr view__more__popup__wr"><!-- graph__popup__wr - 팝업의 사이즈나 레이아웃이 달라서 필요한 class -->
+			<div class="popup__bg"></div>
+			<div class="popup__box view__more__popup__box clearfix">
+				<p class="view__more__popup__title">ID 477454166F34c4b6fa94</p>
+				
+				<div class="viewmore__popup__cont">
+					<ul class="viewmore__popup__cont__ul">
+						<li class="viewmore__popup__cont__list">
+							<p class="viewmore__popup__list__title">Stime</p>
+							<p class="viewmore__popup__list__text">2022-10-12 15:03:45.000</p>
+						</li>
+						<li class="viewmore__popup__cont__list">
+							<p class="viewmore__popup__list__title">Etime</p>
+							<p class="viewmore__popup__list__text">2022-10-12 15:03:45.000</p>
+						</li>
+						<li class="viewmore__popup__cont__list">
+							<p class="viewmore__popup__list__title">Param</p>
+							<p class="viewmore__popup__list__text">Undefined-16368</p>
+						</li>
+						<li class="viewmore__popup__cont__list">
+							<p class="viewmore__popup__list__title">DATA</p>
+							<p class="viewmore__popup__list__text">611,604,596,589,588,111,222,444,131,611,604,596,589,588,111,222,444,131,564,654,546</p>
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="popup__btn__wr view__more__close__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn view__more__close__btn">CLOSE</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="my__info__popup__wr popup__wr">
+			<div class="popup__bg"></div>
+			<div class="my__info__popup__box popup__box">
+				<p class="my__info__popup__title popup__title">내 정보 수정</p>
+				<div class="my__info__popup__cont popup__cont">
+					<ul class="">
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 ID</p>
+							<input type="text" class="input__readonly" readonly>
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호 확인</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 이름</p>
+							<input type="text">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">E-Mail</p>
+							<input type="email">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">연락처</p>
+							<input type="text">
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="my__info__popup__btn__wr popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+					<a href="javascript:void(0);" class="popup__save__btn">SAVE SHANGES</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+$(function(){
+
+	$('.drop__down__list a').click(function(){
+		var tab_id = $(this).attr('data-tab');
+		var tab_text = $(this).text();
+
+		$('.tab__contents__box').removeClass('active');
+		$('.drop__down__list a').removeClass('active');
+
+		$(this).addClass('active');
+		$("#"+tab_id).addClass('active');
+
+		$('.drop__down__title span').text(tab_text);
+	})
+
+
+	
+});
+</script>
+
+
+<script>
+function form_Check(){
+	if(form5.search__patient.value == ''){
+		alert("환자번호를 입력해주십시오.");
+		form5.search__patient.focus();
+		return;
+	}
+	if(form5.selected__option__view.value == '' || form5.selected__option__view2.value == ''){
+		alert("UNIT, BED 중 한가지를 선택해주십시오.");
+		form5.selected__option__view.focus();
+		return;
+	}
+	if(form5.start__datepicker.value == ''){
+		alert("시작날짜를 입력해주십시오.");
+		form5.start__datepicker.focus();
+		return;
+	}
+	if(form5.end__datepicker.value == ''){
+		alert("종료날짜를 입력해주십시오.");
+		form5.end__datepicker.focus();
+		return;
+	}
+}
+</script>
+
+
+
+</body>
+</html>

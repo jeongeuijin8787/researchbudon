@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="icon" transform="translate(-50 -438)">
+    <g id="graph" transform="translate(5172 19063)">
+      <rect id="box" width="5" height="15" rx="1" transform="translate(-5121 -18620)" fill="#fff"/>
+      <rect id="box-2" data-name="box" width="5" height="10" rx="1" transform="translate(-5114 -18615)" fill="#fff"/>
+      <rect id="box-3" data-name="box" width="5" height="20" rx="1" transform="translate(-5107 -18625)" fill="#fff"/>
+    </g>
+    <rect id="영역" width="20" height="20" transform="translate(50 438)" fill="#fff" opacity="0"/>
+  </g>
+</svg>

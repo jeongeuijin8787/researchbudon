@@ -1,0 +1,9 @@
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <circle id="box" cx="21" cy="21" r="21" fill="rgba(96,122,255,0.1)"/>
+  <g id="icon-2" data-name="icon" transform="translate(8 9)">
+    <g id="warning" transform="translate(3.402 3.201)">
+      <path id="빼기_2" data-name="빼기 2" d="M17.56,17.066H1.637A1.638,1.638,0,0,1,.218,14.608L8.18.818a1.639,1.639,0,0,1,2.838,0l7.961,13.79a1.639,1.639,0,0,1-1.419,2.458ZM9.6,12.8a1.03,1.03,0,1,0,1.03,1.03A1.031,1.031,0,0,0,9.6,12.8Zm0-7.728A1.031,1.031,0,0,0,8.569,6.1v4.218a1.03,1.03,0,1,0,2.059,0V6.1A1.031,1.031,0,0,0,9.6,5.071Z" fill="#607aff"/>
+    </g>
+    <rect id="영역" width="24" height="24" transform="translate(1)" fill="#607aff" opacity="0"/>
+  </g>
+</svg>

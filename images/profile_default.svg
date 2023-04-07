@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="user" transform="translate(-1836 -15.5)">
+    <circle id="user-2" data-name="user" cx="21" cy="21" r="21" transform="translate(1836 15.5)" fill="rgba(236,244,255,0.13)"/>
+    <g id="user-3" data-name="user" transform="translate(1840.2 20.599)">
+      <path id="user-4" data-name="user" d="M41.112,45.984a21.733,21.733,0,0,0-17-7.984,21.735,21.735,0,0,0-17,7.974,21.657,21.657,0,0,0,17,8.026,21.659,21.659,0,0,0,17-8.016Z" transform="translate(-7.312 -17.099)" fill="#8c97b5"/>
+      <circle id="user-5" data-name="user" cx="8" cy="8" r="8" transform="translate(8.8 2.902)" fill="#8c97b5"/>
+    </g>
+  </g>
+</svg>

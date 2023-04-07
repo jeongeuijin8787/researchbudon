@@ -1,0 +1,8 @@
+<svg id="btn" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="edit" transform="translate(-1.001 -1.166)">
+    <path id="패스_7445" data-name="패스 7445" d="M21.174,21.739H9.87A.87.87,0,1,1,9.87,20h11.3a.87.87,0,1,1,0,1.739Z" transform="translate(-1.043 -2.326)" fill="#596175"/>
+    <path id="패스_7446" data-name="패스 7446" d="M19.445,3.888l-1.23-1.23a1.781,1.781,0,0,0-2.459,0l-1.8,1.8,3.689,3.689,1.8-1.8a1.738,1.738,0,0,0,0-2.459Z" transform="translate(-1.689)" fill="#596175"/>
+    <path id="패스_7447" data-name="패스 7447" d="M11.038,6.215,2.076,15.177a.426.426,0,0,0-.116.208l-.948,4.022a.436.436,0,0,0,.523.523l4.022-.948a.434.434,0,0,0,.208-.116L14.727,9.9Z" transform="translate(0 -0.528)" fill="#596175"/>
+  </g>
+  <rect id="영역" width="20" height="20" transform="translate(0)" fill="#fff" opacity="0"/>
+</svg>

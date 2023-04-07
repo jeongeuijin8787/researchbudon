@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=0,maximum-scale=10">
+
+<title>budon</title>
+
+<link  rel="stylesheet"  href="./css/default.css">
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="./js/select_box.js"></script>
+
+<script src="./js/check_box.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+
+
+<!-- Load c3.css -->
+<link href="/path/to/c3.css" rel="stylesheet">
+
+<!-- Load d3.js and c3.js -->
+<script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
+<script src="/path/to/c3.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/graph.js"></script>
+</head>
+
+
+
+<body>
+
+
+<header class="header" id="header">
+	<div class="inbox">
+		<div class="hd__logo__wr">
+			<a href="./index.html"><img src="./images/logo.svg" title="budon logo" alt="budon logo"></a>
+		</div>
+		<ul class="hd__menu__wr">
+			<li class=" hd__menu__list hd__menu__list01">
+				<a href="./index.html"><span class="menu__icon"><img src="./images/icon_header_off01.svg" alt=""></span><p class="">Real-Time View</p></a>
+			</li>
+			<li class=" hd__menu__list hd__menu__list02">
+				<a href="./trendview.html"><span class="menu__icon"><img src="./images/icon_header_off02.svg" alt=""></span><p class="">Trend View</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list03">
+				<a href="./alarm.html"><span class="menu__icon"><img src="./images/icon_header_off03.svg" alt=""></span><p class="">Alarm History</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list04">
+				<a href="./download.html"><span class="menu__icon"><img src="./images/icon_header_off04.svg" alt=""></span><p class="">Download</p></a>
+			</li>
+			<li class=" hd__menu__list hd__menu__list05">
+				<a href="./data.html"><span class="menu__icon"><img src="./images/icon_header_off05.svg" alt=""></span><p>데이터 수집현황</p></a>
+			</li>
+			<li class="active hd__menu__list hd__menu__list06">
+				<a href="./dashboard.html"><span class="menu__icon"><img src="./images/icon_header_on06.svg" alt=""></span><p>시스템 대시보드</p></a>
+			</li>
+			<li class="hd__menu__list hd__menu__list07">
+				<a href="./management.html"><span class="menu__icon"><img src="./images/icon_header_off07.svg" alt=""></span><p>사용자 관리</p></a>
+			</li>
+		</ul>
+
+		<section class="container__top__box" id="container__top__box">
+			<div class="top__profile__box">
+				<div class="top__profile__icon"><img src="./images/profile_default.svg" alt="profile"></div>
+				<div class="top__admin__info">
+					<p class="top__admin__name">PLAN-A</p>
+					<p class="top__admin__id">planaagency</p>
+				</div>
+				<div class="top__more__view">
+					<img src="./images/icon_profile_arrow.svg" alt="moreview">
+				</div> 
+				<ul class="top__profile__menu">
+					<li class="top__profile__edit">
+						<a href="#">
+							<span class="top__edit__icon">
+								<img src="./images/icon_profilemenu_edit_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_edit_on.svg" class="icon on">
+							</span>
+							Edit
+						</a>
+					</li>
+					<li class="top__profile__logout">
+						<a href="./login.html">
+							<span class="top__logout__icon">
+								<img src="./images/icon_profilemenu_logout_off.svg" class="icon off">
+								<img src="./images/icon_profilemenu_logout_on.svg" class="icon on">
+							</span>
+								Log Out
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</header>
+
+
+
+<div id="wrapper">
+	<div id="container">
+		<section class="container__contents__wr" id="">
+			<div class="container__contents__box ">
+				<!-- 상단 -->
+				<div class="container__data__wr">
+					<div class="container__data__box">
+						<ul class="container__data__ul">
+							<li class="container__data__list container__data__list00 container__data__list02"><!-- .container__data__list00 = background-color:transparent -->
+								<p class="data__box__main__title">User Information</p>
+								<div class="data__list__top__share__wr">
+									<div class="data__list00__left__wr">
+										<ul class="data__list00__left__ul">
+											<li class="data__list00__left__list">
+												<p class="data__list__top__title"><img src="./images/icon_data_now.svg" alt="">현재 접속자 수</p>
+												<div class="gauge__bar__wr">
+													<span class="gauge__bar"></span>
+													<span class="gauge__situation"></span>
+												</div>
+												<p class="data__list__top__text"><strong>24</strong> / 37 명</p>
+											</li>
+											<li class="data__list00__left__list">
+												<p class="data__list__top__title"><img src="./images/icon_data_recognize.svg" alt="">가입승인 대기 수</p>
+												<p class="data__list__top__text"><strong>1</strong>명</p>
+											</li>
+										</ul>
+									</div>
+									<div class="data__list00__right__wr">
+										<div class="container__data__list__box">
+											<p class="data__list__top__title"><img src="./images/icon_data_connect.svg" alt="">접속로그</p>
+											<div class="data__warning__box">
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+												<p class="data__warning__text">[2022-12-06 11:30:49] 로그인 - votem</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li><!-- .container__data__list03 = width:33.333% -->
+							<li class="container__data__list container__data__list00 container__data__list02"><!-- .container__data__list00 = background-color:transparent -->
+								<p class="data__box__main__title">Mornitoring Server</p>
+								<div class="container__data__list__box">
+									<p class="data__list__top__title"><img src="./images/icon_data_warning.svg" alt="">최근 발생 경고</p>
+									<div class="data__warning__box">
+										<p class="data__warning__text">[2022-11-04T09:56:56][WARNING] BUDON-WORKSTATION - MEMORY null 86.4%</p>
+										<p class="data__warning__text">[2022-11-04T09:56:52][WARNING] BUDON-WORKSTATION - CPU null 22.1%</p>
+										<p class="data__warning__text">[2022-11-04T09:56:15][WARNING] BUDON-WORKSTATION - MEMORY null 86.6%</p>
+										<p class="data__warning__text">[2022-11-04T09:56:10][WARNING] BUDON-WORKSTATION - CPU null 29.2%</p>
+										<p class="data__warning__text">[2022-11-04T09:55:38][WARNING] BUDON-WORKSTATION - CPU null 22.9%</p>
+										<p class="data__warning__text">[2022-11-04T09:55:38][WARNING] BUDON-WORKSTATION - MEMORY null 86.3%</p>
+										<p class="data__warning__text">[2022-11-04T09:55:01][WARNING] BUDON-WORKSTATION - MEMORY null 86.4%</p>
+										<p class="data__warning__text">[2022-11-04T09:54:56][WARNING] BUDON-WORKSTATION - CPU null 22.8%</p>
+										<p class="data__warning__text">[2022-11-04T09:54:29][WARNING] BUDON-WORKSTATION - MEMORY null 86.2%</p>
+										<p class="data__warning__text">[2022-11-04T09:54:24][WARNING] BUDON-WORKSTATION - CPU null 22.1%</p>
+										<p class="data__warning__text">[2022-11-04T09:53:50][WARNING] BUDON-WORKSTATION - MEMORY null 86.4%</p>
+										<p class="data__warning__text">[2022-11-04T09:53:46][WARNING] BUDON-WORKSTATION - CPU null 28.5%</p>
+										<p class="data__warning__text">[2022-11-04T09:53:25][WARNING] BUDON-WORKSTATION - CPU null 16.4%</p>
+										<p class="data__warning__text">[2022-11-04T09:53:24][WARNING] BUDON-WORKSTATION - NETWORK br-dd721ff1367e_tx 43.2MB</p>
+									</div>
+								</div>
+							</li><!-- .container__data__list03 = width:33.333% -->
+
+						
+						</ul>
+					</div><!-- width:33.333%의 contents -->
+
+
+					<div class="container__data__box">
+						<p class="data__box__main__title">Server Status Chart<span class="data__box__sub__title">BUDON-WORKSTATION (BUDON.DUCKDNS.ORG)</span></p>
+
+						<ul class="container__data__ul">
+							<li class="container__data__list container__data__list02">
+								<div class="data__list__text__wr">
+									<p class="data__box__cont__title ftc__607aff">CPU</p>
+									<div class="data__box__cont__text__wr">
+										<p class="data__box__cont__text">31.6<span class="data__box__cont__sub__text">%</span></p>
+									</div>
+								</div>
+								<div class="data__graph__wr">
+									<canvas id="graph__cpu"></canvas>
+									<script>
+									  const ctx = document.getElementById('graph__cpu');
+
+									  new Chart(ctx, {
+										type: 'bar',
+										data: {
+										  labels: ['2022-09', '2022-10', '2022-11', '2022-12'],
+										  datasets: [{
+											label: 'CPU',
+											data: [10, 20, 30, 40, 50, 60],
+											backgroundColor: [
+												'#4DB8E7'
+											],
+											borderColor: [
+												'#4DB8E7'
+											],
+											borderWidth: 0
+										  }]
+										},
+										options: {
+										  scales: {
+											y: {
+											  beginAtZero: true
+											}
+										  }
+										}
+									  });
+									</script>
+								</div>
+							</li><!-- .container__data__list02 = width:50% -->
+							<li class="container__data__list container__data__list02">
+								<div class="data__list__text__wr">
+									<p class="data__box__cont__title ftc__FAAA47">MEMORY</p>
+									<div class="data__box__cont__text__wr">
+										<p class="data__box__cont__text">65.9<span class="data__box__cont__sub__text">%</span></p>
+									</div>
+								</div>
+								<div class="data__graph__wr">
+									<canvas id="graph__memory"></canvas>
+									<script>
+									  const ctx2 = document.getElementById('graph__memory');
+
+									  new Chart(ctx2, {
+										type: 'bar',
+										data: {
+										  labels: ['2022-12-10', '2022-12-11', '2022-12-12', '2022-12-13', '2022-12-14', '2022-12-15', '2022-12-16', '2022-12-17', '2022-12-18'],
+										  datasets: [{
+											label: 'MEMORY',
+											data: [2, 4, 6, 8, 10, 12,14,16,18,20],
+											backgroundColor: [
+												'#FAAA47'
+											],
+											borderColor: [
+												'#FAAA47'
+											],
+											borderWidth: 0
+										  }]
+										},
+										options: {
+										  scales: {
+											y: {
+											  beginAtZero: true
+											}
+										  }
+										}
+									  });
+									</script>
+								</div>
+							</li><!-- .container__data__list02 = width:50% -->
+							<li class="container__data__list container__data__list02">
+								<div class="data__list__text__wr">
+									<p class="data__box__cont__title ftc__a6b4ff">NETWORK</p>
+									<div class="data__box__cont__text__wr">
+										<p class="data__box__cont__text"><span class="data__box__cont__sub__text ftc__8c97b5">RX</span> 388.6<span class="data__box__cont__sub__text">MB</span></p>
+										<p class="data__box__cont__text"><span class="data__box__cont__sub__text ftc__8c97b5">TX</span>  3849.9<span class="data__box__cont__sub__text">MB</span></p>
+									</div>
+								</div>
+								<div class="data__graph__wr">
+									<canvas id="graph__network"></canvas>
+									<script>
+									  const ctx3 = document.getElementById('graph__network');
+
+									  new Chart(ctx3, {
+										type: 'bar',
+										data: {
+										  labels: ['2022-09', '2022-10', '2022-11', '2022-12'],
+										  datasets: [{
+											label: 'NETWORK',
+											data: [10, 20, 30, 40, 50, 60],
+											backgroundColor: [
+												'#B4F563'
+											],
+											borderColor: [
+												'#B4F563'
+											],
+											borderWidth: 0
+										  }]
+										},
+										options: {
+										  scales: {
+											y: {
+											  beginAtZero: true
+											}
+										  }
+										}
+									  });
+									</script>
+								</div>
+							</li><!-- .container__data__list02 = width:50% -->
+							<li class="container__data__list container__data__list02">
+								<div class="data__list__text__wr">
+									<p class="data__box__cont__title ftc__b673f9">DISK</p>
+									<div class="data__box__cont__text__wr">
+										<p class="data__box__cont__text"><span class="data__box__cont__sub__text ftc__8c97b5">/dev/sda4</span> 63.3<span class="data__box__cont__sub__text">%</span></p>
+										<p class="data__box__cont__text"><span class="data__box__cont__sub__text ftc__8c97b5">/dev/sda2</span> 16.1<span class="data__box__cont__sub__text">%</span></p>
+										<p class="data__box__cont__text"><span class="data__box__cont__sub__text ftc__8c97b5">/dev/sda1</span> 16.1<span class="data__box__cont__sub__text">%</span></p>
+										<p class="data__box__cont__text"><span class="data__box__cont__sub__text ftc__8c97b5">/dev/sda1</span> 16.1<span class="data__box__cont__sub__text">%</span></p>
+										<p class="data__box__cont__text"><span class="data__box__cont__sub__text ftc__8c97b5">zfs_pool</span> 4.1<span class="data__box__cont__sub__text">%</span></p>
+										<p class="data__box__cont__text"><span class="data__box__cont__sub__text ftc__8c97b5">zfs_pool/fs1</span> 4.2<span class="data__box__cont__sub__text">%</span></p>
+									</div>
+								</div>
+								<div class="data__graph__wr">
+									<canvas id="graph__disk"></canvas>
+									<script>
+									  const ctx4 = document.getElementById('graph__disk');
+
+									  new Chart(ctx4, {
+										type: 'bar',
+										data: {
+										  labels: ['2022-12-10', '2022-12-11', '2022-12-12', '2022-12-13', '2022-12-14', '2022-12-15', '2022-12-16', '2022-12-17', '2022-12-18'],
+										  datasets: [{
+											label: 'DISK',
+											data: [2, 4, 6, 8, 10, 12,14,16,18,20],
+											backgroundColor: [
+												'#9a9ae0'
+											],
+											borderColor: [
+												'#9a9ae0'
+											],
+											borderWidth: 0
+										  }]
+										},
+										options: {
+										  scales: {
+											y: {
+											  beginAtZero: true
+											}
+										  }
+										}
+									  });
+									</script>
+								</div>
+							</li><!-- .container__data__list02 = width:50% -->
+						</ul>
+					</div><!-- width:50%의 contents -->
+				</div>
+			</div>
+		</section> 
+
+		<div class="my__info__popup__wr popup__wr">
+			<div class="popup__bg"></div>
+			<div class="my__info__popup__box popup__box">
+				<p class="my__info__popup__title popup__title">내 정보 수정</p>
+				<div class="my__info__popup__cont popup__cont">
+					<ul class="">
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 ID</p>
+							<input type="text" class="input__readonly" readonly>
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">비밀번호 확인</p>
+							<input type="password">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">사용자 이름</p>
+							<input type="text">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">E-Mail</p>
+							<input type="email">
+						</li>
+						<li class="my__info__popup__cont__list">
+							<p class="my__info__popup__cont__text">연락처</p>
+							<input type="text">
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="my__info__popup__btn__wr popup__btn__wr">
+					<a href="javascript:void(0);" class="popup__close__btn">CLOSE</a>
+					<a href="javascript:void(0);" class="popup__save__btn">SAVE SHANGES</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</body>
+</html>

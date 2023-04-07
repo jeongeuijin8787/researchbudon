@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="btn" transform="translate(-1780 -181)">
+    <rect id="영역" width="20" height="20" transform="translate(1780 181)" fill="#8c97b5" opacity="0"/>
+    <path id="search" d="M23.512,21.155l-4.231-4.231a8.349,8.349,0,1,0-2.357,2.357l4.231,4.231a1.666,1.666,0,1,0,2.357-2.357ZM6.5,12.333a5.833,5.833,0,1,1,5.833,5.833A5.84,5.84,0,0,1,6.5,12.333Z" transform="translate(1776 177)" fill="#8c97b5"/>
+  </g>
+</svg>
